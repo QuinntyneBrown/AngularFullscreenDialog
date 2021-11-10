@@ -22,7 +22,7 @@ To achieve our goals, we have to:
 2. Add stying for the component to be take the fullscreen
 3. Override any styling by Angular Material preventing our component to appear to be fullscreen
 
-Creating the component and styling it to be fullscreen is straightfoward. When the Angular Material dialog service open's the component, it adds an inline style of max-width:80vw to the mat-dialog-container which wraps our component. Also the cdk-overlay which also wraps out component is styled with a border-radius. Both of these styles need to be overriden in order to give our component a fullscreen appearance.
+Creating the component and styling it to be fullscreen is straightfoward. When the Angular Material dialog service open's the component, it adds an inline style of max-width:80vw to the cdk-overlay-panel which wraps our component. Also the mat-dialog-container which also wraps our component is styled with a border-radius. Both of these styles need to be overriden in order to give our component a fullscreen appearance.
 
 The following code should do the trick:
 ```scss
