@@ -32,6 +32,24 @@ The following code should do the trick:
   }
 ````
 
+At this point we have two options for adding the styles:
+1. Add a panel class and pass it as a parameter to the open method when using the Angular Material dialog class to open the dialog
+2. Inside the scss of our dialog component we can add the styles, using ::ng-deep
+
+```scss
+::ng-deep .cdk-overlay-pane {
+  max-width: 100vw !important;
+  mat-dialog-container.mat-dialog-container {
+    border-radius: 0;
+  }
+}
+````
+
+Option 1 is a little more expressive for developers mataining the code after the initial development. That can see that there is a panel class add to override the initial panel styles. Option 2 is a little cleaner and preferred if the convention is known amongst the team.
+
+
 ## Conclusion
+With not too much effort we can achieve the goal of a fullscreen dialog using Angular Material, but like with everyhting, it depends when it comes to how to design the solution. More spefically, it depends on where the team expects for overrides of the container elements to be in scss with the component or with the dialog open method call.
+
 
 
