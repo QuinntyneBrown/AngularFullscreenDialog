@@ -1,4 +1,4 @@
-# Fullscreen Dialog using Angular Material
+# Technical Design: Fullscreen Dialog using Angular (Material)
 
 ## Overview
 
