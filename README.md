@@ -17,6 +17,10 @@ Dialogs are panels that are overlayed a UI in order to present the user some inf
 - None
 
 ## Design
+To achieve our goals, we have to:
+1. Create a Dialog Component
+2. Add stying for the component to be take the fullscreen
+3. Override any styling by Angular Material preventing our component to appear to be fullscreen
 
 ## Conclusion
 
