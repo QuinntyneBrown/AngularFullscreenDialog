@@ -30,7 +30,7 @@ The following code should do the trick:
   mat-dialog-container.mat-dialog-container {
     border-radius: 0;
   }
-``
+````
 
 ## Conclusion
 
