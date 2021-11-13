@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this._dialog.open(HelloWorldComponent, {
-      panelClass:'g-hello-world-dialog-panel'
+      //panelClass:'g-hello-world-dialog-panel'
     })
     .afterClosed()
     .subscribe();
