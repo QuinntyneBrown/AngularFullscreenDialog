@@ -49,7 +49,18 @@ Option 1 is a little more expressive for developers mataining the code after the
 
 
 ## Conclusion
-With not too much effort we can achieve the goal of a fullscreen dialog using Angular Material, but like with everyhting, it depends when it comes to how to design the solution. More spefically, it depends on where the team expects for overrides of the container elements to be in scss with the component or with the dialog open method call.
+With not too much effort we can achieve the goal of a fullscreen dialog using Angular Material, but like with everyhting, it depends when it comes to how to design the solution. More spefically, it depends on where the team expects for overrides of the container elements to be; in scss with the component or with the dialog open method call.
+
+I would recommend to keep the styling related to the dialog with the component scss and also protect it with a panel class.
+
+```scss
+::ng-deep .hello-world-dialog-panel.cdk-overlay-pane {
+  max-width: 100vw !important;
+  mat-dialog-container.mat-dialog-container {
+    border-radius: 0;
+  }
+}
+````
 
 ## Give a Star! :star:
 
