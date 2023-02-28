@@ -1,21 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { CommonModule } from '@angular/common';
+import { Component, inject, OnInit } from '@angular/core';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { HelloWorldComponent } from '@shared';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  standalone: true,
+  imports: [CommonModule, MatDialogModule]
 })
 export class AppComponent implements OnInit {
-  constructor(
-    private readonly _dialog: MatDialog
-  ) { }
+  
+  private readonly _dialog = inject(MatDialog);
 
   ngOnInit() {
-    this._dialog.open(HelloWorldComponent, {
-      //panelClass:'g-hello-world-dialog-panel'
-    })
+    this._dialog.open(HelloWorldComponent)
     .afterClosed()
     .subscribe();
   }
