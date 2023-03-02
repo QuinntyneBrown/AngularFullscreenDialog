@@ -1,27 +1,25 @@
 import { DOCUMENT } from '@angular/common';
-import { Inject, Injectable } from '@angular/core';
+import { Inject, Injectable, OnDestroy } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class HtmlElementService {
+@Injectable()
+export class HtmlElementService implements OnDestroy {
 
-  private readonly _hideOverflowCssClass = "--hide-overflow";
+  static HIDE_OVERFLOW_CSS_CLASS = "--hide-overflow";
 
-  private get _htmlElement() {
-    return this._document.querySelector("html");
+  private get _rootHtmlElement() {
+    return this._document.documentElement;
   }
+
   constructor(
     @Inject(DOCUMENT) private readonly _document: Document
-  ) { }
-
-  public hideOverflow() {
-    if(!this._htmlElement.classList.contains(this._hideOverflowCssClass)) {
-      this._htmlElement.classList.add(this._hideOverflowCssClass);
+  ) { 
+    if(!this._rootHtmlElement.classList.contains(HtmlElementService.HIDE_OVERFLOW_CSS_CLASS)) {
+      this._rootHtmlElement.classList.add(HtmlElementService.HIDE_OVERFLOW_CSS_CLASS);
     }
   }
 
-  public unhideOverflow() {
-    this._htmlElement.classList.remove(this._hideOverflowCssClass)
+
+  public ngOnDestroy() {
+    this._rootHtmlElement.classList.remove(HtmlElementService.HIDE_OVERFLOW_CSS_CLASS)
   }
 }

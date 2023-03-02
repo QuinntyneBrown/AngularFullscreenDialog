@@ -16,17 +16,13 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatIconModule,
     MatButtonModule,
     MatDialogModule
+  ],
+  providers: [
+    HtmlElementService
   ]
 })
-export class HelloWorldComponent implements OnInit, OnDestroy {
+export class HelloWorldComponent {
 
   private readonly _htmlElementService = inject(HtmlElementService);
 
-  ngOnInit(): void {
-    this._htmlElementService.hideOverflow();
-  }
-
-  ngOnDestroy(): void {
-    this._htmlElementService.unhideOverflow();
-  }
 }
